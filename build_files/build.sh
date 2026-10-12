@@ -15,6 +15,7 @@ cp -avf "/ctx/system_files"/. /
 # Install Nvidia Open Drivers
 ## Add Repos
 dnf5 install -y \
+    dnf5-plugins \
     https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
     https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
