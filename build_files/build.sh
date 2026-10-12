@@ -32,8 +32,7 @@ dnf5 install -y \
     podman \
     cockpit-podman \
     podman-compose \
-    nvidia-container-toolkit \
-    nvidia-container-toolkit-selinux
+    nvidia-container-toolkit
 
 # this installs a package from fedora repos
 dnf5 install -y tmux htop git rsync tcpdump pciutils usbutils wireguard-tools firewalld
