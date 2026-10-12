@@ -15,6 +15,18 @@ cp -avf "/ctx/system_files"/. /
 # this installs a package from fedora repos
 dnf5 install -y tmux
 
+# Cockpit Web UI Packages
+dnf5 install -y cockpit cockpit-files cockpit-networkmanager cockpit-storaged cockpit-system cockpit-ws cockpit-ws-selinux cockpit-bridge cockpit-machines cockpit-ostree
+
+# Podman Packages
+dnf5 install -y podman podman-cockpit podman-compose
+
+# Storage Support
+dnf5 install -y udisks2-lvm2 udisks2-btrfs smartmontools
+
+# Additional Packags
+dnf5 install -y git
+
 # Use a COPR Example:
 #
 # dnf5 -y copr enable ublue-os/staging
