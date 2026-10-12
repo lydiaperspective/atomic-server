@@ -13,7 +13,7 @@ cp -avf "/ctx/system_files"/. /
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/43/x86_64/repoview/index.html&protocol=https&redirect=1
 
 # this installs a package from fedora repos
-dnf5 install -y tmux
+dnf5 install -y tmux htop git rsync tcpdump pciutils usbutils wireguard-tools firewalld
 
 # Cockpit Web UI Packages
 dnf5 install -y cockpit cockpit-files cockpit-networkmanager cockpit-storaged cockpit-system cockpit-ws cockpit-ws-selinux cockpit-bridge cockpit-machines cockpit-ostree
@@ -24,8 +24,12 @@ dnf5 install -y podman podman-cockpit podman-compose
 # Storage Support
 dnf5 install -y udisks2-lvm2 udisks2-btrfs smartmontools
 
-# Additional Packags
-dnf5 install -y git
+# Samba file server
+dnf5 install -y samba samba-common-tools
+
+### Add firewall rules
+firewall-offline-cmd --add-service=cockpit
+firewall-offline-cmd --add-service=samba
 
 # Use a COPR Example:
 #
@@ -37,3 +41,8 @@ dnf5 install -y git
 #### Example for enabling a System Unit File
 
 systemctl enable podman.socket
+systemctl enable cockpit.socket
+systemctl enable firewalld.service
+systemctl enable smb.service
+
+dnf5 clean all
