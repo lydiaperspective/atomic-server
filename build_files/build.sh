@@ -19,7 +19,7 @@ dnf5 install -y tmux htop git rsync tcpdump pciutils usbutils wireguard-tools fi
 dnf5 install -y cockpit cockpit-files cockpit-networkmanager cockpit-storaged cockpit-system cockpit-ws cockpit-ws-selinux cockpit-bridge cockpit-machines cockpit-ostree
 
 # Podman Packages
-dnf5 install -y podman podman-cockpit podman-compose
+dnf5 install -y podman cockpit-podman podman-compose
 
 # Storage Support
 dnf5 install -y udisks2-lvm2 udisks2-btrfs smartmontools
