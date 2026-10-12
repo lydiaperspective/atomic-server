@@ -46,10 +46,6 @@ dnf5 install -y udisks2-lvm2 udisks2-btrfs smartmontools
 # Samba file server
 dnf5 install -y samba samba-common-tools
 
-### Pre-generate CDI spec for Podman GPU Passthrough
-# This generates /etc/cdi/nvidia.yaml so Podman can access the GTX 1650 via --device nvidia.com/gpu=all
-mkdir -p /etc/cdi
-nvidia-ctk cdi generate --output=/etc/cdi/nvidia.yaml
 
 ### Add firewall rules
 firewall-offline-cmd --add-service=cockpit
